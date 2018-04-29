@@ -1,0 +1,28 @@
+<section class="file">
+  <h1>file Component</h1>
+  <!-- 3번쨰 줄에 삽입 -->
+  <div>
+    <table class="table table-hover">
+      <thead>
+      <tr>
+        <th scope="col">파일 이름</th>
+      </tr>
+      <!-- 8번 째줄 -->
+      <th scope="col">버튼</th>
+      </thead>
+      <tbody>
+      <template>
+        <tr v-for="board in boards" >
+          <!-- 15 번 째 줄 -->
+          <td scope="row"><button @click="streamingVideo(board._id)">스트리밍</button></td>
+          <td scope="row">{{board.originalname}}</td>
+        </tr>
+      </template>
+      </tbody>
+    </table>
+  </div>
+  <form id="writeAction" action="/api/file/upload" method="post" enctype="multipart/form-data">
+    <input type="file" class="inputFile" id="UploadFile" name="UploadFile" multiple>
+    <input type="submit" value="UploadFile">
+  </form>
+</section>

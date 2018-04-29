@@ -1,0 +1,22 @@
+<section class="movie">
+  <h1>주간 영화 리스트</h1>
+  <!-- 3번쨰 줄에 삽입 -->
+    <table class="table table-hover">
+    <thead>
+    <tr>
+      <th class="title-top" scope="col">순위</th>
+      <th class="title-top" scope="col">제목</th>
+      <th class="title-top" scope="col">개봉일자</th>
+    </tr>
+    </thead>
+    <tbody>
+    <template>
+        <tr v-for="movie in movies" >
+          <td scope="row">{{movie.rnum}}</td>
+          <td scope="row">{{movie.movieNm}}</td>
+          <td scope="row">{{movie.openDt}}</td>
+        </tr>
+    </template>
+    </tbody>
+    </table>
+</section>

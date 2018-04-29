@@ -1,0 +1,31 @@
+### Movie List 조회
+GET http://localhost:3000/api/movie/list
+
+### Movie 상세
+GET http://localhost:3000/api/movie/5a9d40578419b42f0bce3d79/detail
+
+### Movie 등록
+POST http://localhost:3000/api/movie
+Content-Type: application/json
+
+{
+    "name": "음냐 시작",
+    "year": "2010",
+    "director": "sihoon",
+    "poster": "http://img.cgv.co.kr/Movie/Thumbnail/Poster/000079/79416/79416_185.jpg"
+}
+
+### Movie 수정
+PUT http://localhost:3000/api/movie/5a9d40578419b42f0bce3d79
+Content-Type: application/json
+
+{
+    "name": "새로운 시작",
+    "year": "2090",
+    "director": "sihoon",
+    "poster": "http://img.cgv.co.kr/Movie/Thumbnail/Poster/000079/79416/79416_185.jpg"
+}
+
+### Movie 삭제
+DELETE http://localhost:3000/api/movie/5a9d5a91a09a9b310a86306d
+Content-Type: application/json

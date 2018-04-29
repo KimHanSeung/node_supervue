@@ -1,0 +1,32 @@
+<section class="list">
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">No</th>
+        <!-- header 부분에 추가 -->
+        <th scope="col">섬네일</th>
+        <th scope="col" class="col-sm-6">제목</th>
+        <th scope="col">작성일</th>
+        <th scope="col">작성자</th>
+      </tr>
+    </thead>
+    <tbody>
+      <template>
+        <tr v-for="board in boards" >
+            <th scope="row">{{board.no}}</th>
+            <!-- row 부분에 추가 -->
+            <th scope="row"><img :src=board.imagePreview class="image-thumbnail"/></th>
+            <td><router-link :to="{ name: 'read', params: { no: board.no }}">{{board.title}}</router-link></td>
+            <td>{{board.registedAt | moment("dddd, MMMM Do YYYY, h:mm:ss a")}}</td>
+            <td>{{board.register}}</td>
+        </tr>
+      </template>
+    </tbody>
+  </table>
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <button type="button" class="btn btn-warning"><router-link :to="{ name: 'logout'}">로그아웃</router-link></button>
+      <button type="button" class="btn btn-success" @click.prevent="writeBoard">글쓰기</button>
+    </div>
+  </div>
+</section>
