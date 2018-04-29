@@ -26,7 +26,6 @@ let testUser = {
 */
 
 router.use((req, res, next) => {
-
     if('/login' != req.url && '/' != req.url){
         console.log('jwt check');
         const token = req.headers['x-access-token'] || req.query.token
@@ -46,7 +45,7 @@ router.use((req, res, next) => {
             res.status(500).send(err);
         }
     }
-
+    next();
 });
 
 router.post('/', (req, res) => {
